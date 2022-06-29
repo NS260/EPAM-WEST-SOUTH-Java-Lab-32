@@ -20,4 +20,9 @@ public class PetConfig {
     public Cheetah getAnotherCheetah(){
         return new Cheetah();
     }
+
+    @Bean
+    public Cheetah getQualifierCheetah(@Qualifier("cheetah1") Cheetah cheetah){
+        return cheetah;
+    }
 }

@@ -12,12 +12,14 @@ import javax.annotation.PreDestroy;
 public class BeanE implements Beannable {
     private String name;
     private Integer value;
+
     @PostConstruct
-    public void postConstruct(){
+    public void postConstruct() {
         System.out.println("[INIT] PostConstruct method defined as :construct(): was loaded for bean: BeanE");
     }
+
     @PreDestroy
-    public void preDestroy(){
+    public void preDestroy() {
         System.out.println("[DESTROY] PreDestroy method defined as :destroy(): was loaded for bean: BeanE");
     }
 }

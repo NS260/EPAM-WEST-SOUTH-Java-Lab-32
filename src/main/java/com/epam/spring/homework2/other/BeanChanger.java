@@ -13,4 +13,3 @@ public class BeanChanger implements BeanFactoryPostProcessor {
         System.out.println("Init method of class BeanB was changed into modify method: modify()");
     }
 }
-

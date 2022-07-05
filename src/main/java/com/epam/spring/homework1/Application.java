@@ -9,21 +9,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Application {
     public static void main(String[] args) {
-        {
-            ApplicationContext apc = new AnnotationConfigApplicationContext(BeansConfig.class);
-            apc.getBean(Pet.class).printPets();
-        }
-        {
-            ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PetConfig.class);
-            System.out.println(applicationContext.getBeansOfType(Cheetah.class));
-        }
-        {
-            ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PetConfig.class);
-            System.out.println(applicationContext.getBean("cheetah").hashCode() + " Base");
-            System.out.println(applicationContext.getBean("getCheetah").hashCode() + " Primary");
-            System.out.println(applicationContext.getBean("getAnotherCheetah").hashCode() + " Qualifier");
-            System.out.println(applicationContext.getBean(Cheetah.class).hashCode()); // primary bean is loaded
-            System.out.println(applicationContext.getBean("getQualifierCheetah").hashCode()); // qualifier bean is loaded
-        }
+        ApplicationContext apc = new AnnotationConfigApplicationContext(BeansConfig.class);
+        apc.getBean(Pet.class).printPets();
+
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(PetConfig.class);
+        System.out.println(applicationContext.getBeansOfType(Cheetah.class));
+
+        ApplicationContext context = new AnnotationConfigApplicationContext(PetConfig.class);
+        System.out.println(context.getBean("cheetah").hashCode() + " Base");
+        System.out.println(context.getBean("getCheetah").hashCode() + " Primary");
+        System.out.println(context.getBean("getAnotherCheetah").hashCode() + " Qualifier");
+        System.out.println(context.getBean(Cheetah.class).hashCode()); // primary bean is loaded
+        System.out.println(context.getBean("getQualifierCheetah").hashCode()); // qualifier bean is loaded
     }
 }

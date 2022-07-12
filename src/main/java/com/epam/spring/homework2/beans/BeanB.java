@@ -3,10 +3,8 @@ package com.epam.spring.homework2.beans;
 import com.epam.spring.homework2.beans.interfaces.Beannable;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 @Data
-@Component
 public class BeanB implements Beannable {
     @Value("${beanB.name}")
     private String name;

@@ -2,13 +2,11 @@ package com.epam.spring.homework2.beans;
 
 import com.epam.spring.homework2.beans.interfaces.Beannable;
 import lombok.Data;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Data
-@Component
 public class BeanE implements Beannable {
     private String name;
     private Integer value;

@@ -4,10 +4,8 @@ import com.epam.spring.homework2.beans.interfaces.Beannable;
 import lombok.Data;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Component;
 
 @Data
-@Component
 public class BeanA implements Beannable, InitializingBean, DisposableBean {
     private String name;
     private Integer value;

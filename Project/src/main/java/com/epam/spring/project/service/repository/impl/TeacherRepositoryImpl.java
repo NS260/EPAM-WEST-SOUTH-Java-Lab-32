@@ -2,18 +2,21 @@ package com.epam.spring.project.service.repository.impl;
 
 import com.epam.spring.project.service.model.user.Teacher;
 import com.epam.spring.project.service.repository.interfaces.TeacherRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Component
 public class TeacherRepositoryImpl implements TeacherRepository {
     private final List<Teacher> teacherList = new ArrayList<>();
 
     @Override
     public Teacher createTeacher(Teacher teacher) {
+        log.info("TeacherRepoImpl was executed with createTeacher func");
         teacher.setCreateDate(LocalDateTime.now());
         teacherList.add(teacher);
         return teacher;
@@ -21,6 +24,7 @@ public class TeacherRepositoryImpl implements TeacherRepository {
 
     @Override
     public Teacher updateTeacher(String email, Teacher teacher) {
+        log.info("TeacherRepoImpl was executed with updateTeacher func. Teacher email: " + email);
         boolean isDeleted = teacherList.removeIf(t -> t.getEmail().equals(email));
         if (isDeleted) {
             teacherList.add(teacher);
@@ -32,6 +36,7 @@ public class TeacherRepositoryImpl implements TeacherRepository {
 
     @Override
     public Teacher getTeacher(String email) {
+        log.info("TeacherRepoImpl was executed with getTeacher func. Teacher email: " + email);
         return teacherList
                 .stream()
                 .filter(t -> t.getEmail().equals(email))
@@ -41,11 +46,13 @@ public class TeacherRepositoryImpl implements TeacherRepository {
 
     @Override
     public void deleteTeacher(String email) {
+        log.info("TeacherRepoImpl was executed with deleteTeacher func. Teacher email: " + email);
         teacherList.removeIf(t -> t.getEmail().equals(email));
     }
 
     @Override
     public List<Teacher> listTeachers() {
+        log.info("TeacherRepoImpl was executed with listTeachers func");
         return new ArrayList<>(teacherList);
     }
 }

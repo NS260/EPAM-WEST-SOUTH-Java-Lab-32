@@ -14,24 +14,24 @@ import java.util.List;
 @Builder
 public class StudentDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    @Positive
+    @Positive(message = "{id.positive}")
     private Long id;
-    @NotEmpty
-    @Size(min = 2, max = 30)
+    @NotEmpty(message = "{name.nonempty}")
+    @Size(min = 2, max = 30,message = "{student.size}")
     private String firstName;
-    @NotEmpty
-    @Size(min = 2, max = 30)
+    @NotEmpty(message = "{name.nonempty}")
+    @Size(min = 2, max = 30,message = "{student.size}")
     private String lastName;
-    @NotEmpty
-    @Size(min = 5, max = 30)
+    @NotEmpty(message = "{nickname.nonempty}")
+    @Size(min = 5, max = 30,message = "{nickname.size}")
     private String nickName;
-    @Email
+    @Email(message = "{email.source}")
     private String email;
-    @NotEmpty
-    @ValidPassword
+    @NotEmpty(message = "{password.nonempty}")
+    @ValidPassword(message = "{password.valid}")
     private String password;
-    @NotNull
+    @NotNull(message = "{block.notnull}")
     private Block block;
-    @NotEmpty
+    @NotEmpty(message = "{student.courses.nonempty}")
     private final List<CourseDTO> courseDto = new ArrayList<>();
 }

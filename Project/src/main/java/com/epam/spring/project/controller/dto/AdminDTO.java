@@ -10,15 +10,15 @@ import lombok.Data;
 @Builder
 public class AdminDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    @NotNull
-    @Positive
+    @NotNull(message = "{id.notnull}")
+    @Positive(message = "{id.positive}")
     private Long id;
-    @NotEmpty
-    @Size(min = 5, max = 20)
+    @NotEmpty(message = "{nickname.nonempty}")
+    @Size(min = 5, max = 20,message = "{nickname.size}")
     private String nickName;
-    @Email
+    @Email(message = "{email.source}")
     private String email;
-    @NotEmpty
-    @ValidPassword
+    @NotEmpty(message = "{password.nonempty}")
+    @ValidPassword(message = "{password.valid}")
     private String password;
 }

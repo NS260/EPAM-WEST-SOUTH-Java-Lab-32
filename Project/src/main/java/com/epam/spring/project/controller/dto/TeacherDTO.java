@@ -13,20 +13,20 @@ import lombok.Data;
 @Builder
 public class TeacherDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    @Positive
+    @Positive(message = "{id.positive}")
     private Long id;
-    @NotEmpty
-    @Size(min = 2, max = 30)
+    @NotEmpty(message = "{teacher.name.nonempty}")
+    @Size(min = 2, max = 30,message = "{teacher.name.size}")
     private String firstName;
-    @NotEmpty
-    @Size(min = 2, max = 30)
+    @NotEmpty(message = "{teacher.name.nonempty}")
+    @Size(min = 2, max = 30, message = "{teacher.name.size}")
     private String lastName;
-    @NotEmpty
-    @Size(min = 5, max = 30)
+    @NotEmpty(message = "{nickname.nonempty}")
+    @Size(min = 5, max = 30,message = "{teacher.nickname.size}")
     private String nickName;
-    @Email
+    @Email(message = "{email.source}")
     private String email;
-    @NotEmpty
-    @ValidPassword
+    @NotEmpty(message = "{password.nonempty}")
+    @ValidPassword(message = "{password.valid}")
     private String password;
 }

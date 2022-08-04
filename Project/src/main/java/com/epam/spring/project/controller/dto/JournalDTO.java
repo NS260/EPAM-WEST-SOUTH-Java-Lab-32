@@ -10,10 +10,10 @@ import lombok.Data;
 @Data
 @Builder
 public class JournalDTO {
-    @PositiveOrZero
+    @PositiveOrZero(message = "{mark.status}")
     private int mark;
-    @NotNull
+    @NotNull(message = "{course.notnull}")
     private Course course;
-    @NotNull
+    @NotNull(message = "{student.notnull}")
     private Student student;
 }

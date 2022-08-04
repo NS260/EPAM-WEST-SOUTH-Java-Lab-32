@@ -14,21 +14,21 @@ import java.time.LocalDateTime;
 @Builder
 public class CourseDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    @Positive
+    @Positive(message = "{id.positive}")
     private Long id;
-    @NotEmpty
-    @Size(min = 10, max = 30)
+    @NotEmpty(message = "{name.nonempty}")
+    @Size(min = 10, max = 30,message = "{name.size}")
     private String name;
-    @PastOrPresent
+    @PastOrPresent(message = "{date.start}")
     private LocalDateTime startDate;
-    @FutureOrPresent
+    @FutureOrPresent(message = "{date.end}")
     private LocalDateTime endDate;
-    @NotNull
+    @NotNull(message = "{direction.notnull}")
     private Direction direction;
-    @NotNull
+    @NotNull(message = "{status.notnull}")
     private Status status;
-    @NotNull
+    @NotNull(message = "{teacher.notnull}")
     private Teacher teacher;
-    @Positive
+    @Positive(message = "{number.positive}")
     private int numberOfStudents;
 }

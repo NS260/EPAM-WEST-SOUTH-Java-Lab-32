@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/teachers")
+@RequestMapping("/teacher")
 public class TeacherController {
     private final TeacherService teacherService;
 
@@ -34,7 +34,7 @@ public class TeacherController {
     @ResponseStatus(HttpStatus.OK)
     public TeacherDTO getTeacher(@PathVariable String email) {
         log.info("TeacherController was executed with getTeacher func. Teacher email: " + email);
-        return teacherService.getTeacher(email);
+        return teacherService.getTeacherByEmail(email);
     }
 
     @DeleteMapping("/{email}")

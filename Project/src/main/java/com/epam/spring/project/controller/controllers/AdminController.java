@@ -12,7 +12,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/admins")
+@RequestMapping("/admin")
 public class AdminController {
     private final AdminService adminService;
 
@@ -20,7 +20,7 @@ public class AdminController {
     @GetMapping("/{email}")
     public AdminDTO getAdmin(@PathVariable String email) {
         log.info("AdminController was executed with getAdmin func. User email: " + email);
-        return adminService.getAdmin(email);
+        return adminService.getAdminByEmail(email);
     }
 
     @ResponseStatus(HttpStatus.CREATED)

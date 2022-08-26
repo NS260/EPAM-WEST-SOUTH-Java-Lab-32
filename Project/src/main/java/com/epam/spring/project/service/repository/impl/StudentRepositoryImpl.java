@@ -6,13 +6,14 @@ import com.epam.spring.project.service.model.user.constant.Block;
 import com.epam.spring.project.service.repository.interfaces.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@Component
+@Repository
 public class StudentRepositoryImpl implements StudentRepository {
     private final List<Student> studentList = new ArrayList<>();
 

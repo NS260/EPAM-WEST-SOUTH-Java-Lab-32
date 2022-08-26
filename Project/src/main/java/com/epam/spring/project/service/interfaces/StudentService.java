@@ -10,7 +10,7 @@ public interface StudentService {
 
     StudentDTO updateStudent(String email, StudentDTO student);
 
-    StudentDTO getStudent(String email);
+    StudentDTO getStudentByEmail(String email);
 
     void deleteStudent(String email);
 

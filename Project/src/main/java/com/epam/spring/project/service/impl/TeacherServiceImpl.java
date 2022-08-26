@@ -34,7 +34,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public TeacherDTO getTeacher(String email) {
+    public TeacherDTO getTeacherByEmail(String email) {
         log.info("TeacherServiceImpl was executed with getTeacher func. Teacher email: " + email);
         Teacher teacher = teacherRepository.getTeacher(email);
         return TeacherMapper.INSTANCE.mapToDto(teacher);

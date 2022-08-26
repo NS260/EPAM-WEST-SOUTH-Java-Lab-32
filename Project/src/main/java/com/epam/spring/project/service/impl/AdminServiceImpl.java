@@ -33,7 +33,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public AdminDTO getAdmin(String email) {
+    public AdminDTO getAdminByEmail(String email) {
         log.info("AdminServiceImpl was executed with getAdmin func. Admin email: " + email);
         return AdminMapper.INSTANCE.mapToDto(adminRepository.getAdmin(email));
     }

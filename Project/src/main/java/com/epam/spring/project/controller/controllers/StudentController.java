@@ -13,7 +13,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/students")
+@RequestMapping("/student")
 public class StudentController {
     private final StudentService studentService;
 
@@ -35,7 +35,7 @@ public class StudentController {
     @GetMapping("/{email}")
     public StudentDTO getStudent(@PathVariable String email) {
         log.info("StudentController was executed with getStudent func. Student email: " + email);
-        return studentService.getStudent(email);
+        return studentService.getStudentByEmail(email);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)

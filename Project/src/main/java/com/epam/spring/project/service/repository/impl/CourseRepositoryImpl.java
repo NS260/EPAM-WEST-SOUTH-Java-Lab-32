@@ -5,6 +5,7 @@ import com.epam.spring.project.service.model.user.Teacher;
 import com.epam.spring.project.service.repository.interfaces.CourseRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
-@Component
+@Repository
 public class CourseRepositoryImpl implements CourseRepository {
     private final List<Course> courseList = new ArrayList<>();
 

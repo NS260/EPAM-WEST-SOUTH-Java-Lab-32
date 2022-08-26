@@ -13,7 +13,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/courses")
+@RequestMapping("/course")
 public class CourseController {
     private final CourseService courseService;
 
@@ -35,7 +35,7 @@ public class CourseController {
     @GetMapping("/{name}")
     public CourseDTO getCourse(@PathVariable String name) {
         log.info("CourseController was executed with getCourse func. Course name: " + name);
-        return courseService.getCourse(name);
+        return courseService.getCourseByEmail(name);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -63,6 +63,6 @@ public class CourseController {
     @GetMapping("/{email}")
     public List<CourseDTO> getCoursesByTeacher(@PathVariable String email) {
         log.info("CourseController was executed with getCoursesByTeacher func. Teacher email: " + email);
-        return courseService.getCoursesByTeacher(email);
+        return courseService.getCoursesByTeacherEmail(email);
     }
 }

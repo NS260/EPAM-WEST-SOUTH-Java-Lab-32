@@ -37,7 +37,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public StudentDTO getStudent(String email) {
+    public StudentDTO getStudentByEmail(String email) {
         log.info("StudentServiceImpl was executed with getStudent func. Student email: " + email);
         Student student = studentRepository.getStudent(email);
         return StudentMapper.INSTANCE.mapToDto(student);

@@ -9,7 +9,7 @@ public interface TeacherService {
 
     TeacherDTO updateTeacher(String email, TeacherDTO teacher);
 
-    TeacherDTO getTeacher(String email);
+    TeacherDTO getTeacherByEmail(String email);
 
     void deleteTeacher(String email);
 

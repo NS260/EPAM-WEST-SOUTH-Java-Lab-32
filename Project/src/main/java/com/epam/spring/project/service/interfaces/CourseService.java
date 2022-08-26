@@ -10,7 +10,7 @@ public interface CourseService {
 
     CourseDTO updateCourse(String email, CourseDTO course);
 
-    CourseDTO getCourse(String name);
+    CourseDTO getCourseByName(String name);
 
     void deleteCourse(String name);
 
@@ -18,5 +18,5 @@ public interface CourseService {
 
     CourseDTO setTeacherOnCourse(String courseName, TeacherDTO teacher);
 
-    List<CourseDTO> getCoursesByTeacher(String email);
+    List<CourseDTO> getCoursesByTeacherEmail(String email);
 }

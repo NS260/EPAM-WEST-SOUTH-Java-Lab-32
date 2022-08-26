@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class StudentController implements StudentApi {
+
     private final StudentService studentService;
 
     @Override
@@ -31,7 +32,7 @@ public class StudentController implements StudentApi {
     @Override
     public StudentDTO getStudent(@PathVariable String email) {
         log.info("StudentController was executed with getStudent func. Student email: " + email);
-        return studentService.getStudent(email);
+        return studentService.getStudentByEmail(email);
     }
 
     @Override

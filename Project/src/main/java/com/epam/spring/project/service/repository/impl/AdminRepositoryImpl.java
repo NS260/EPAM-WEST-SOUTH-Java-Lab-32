@@ -4,13 +4,14 @@ import com.epam.spring.project.service.model.user.Admin;
 import com.epam.spring.project.service.repository.interfaces.AdminRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@Component
+@Repository
 public class AdminRepositoryImpl implements AdminRepository {
     private final List<Admin> adminList = new ArrayList<>();
 

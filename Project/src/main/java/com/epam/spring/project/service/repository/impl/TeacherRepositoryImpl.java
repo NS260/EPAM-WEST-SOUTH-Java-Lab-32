@@ -4,13 +4,14 @@ import com.epam.spring.project.service.model.user.Teacher;
 import com.epam.spring.project.service.repository.interfaces.TeacherRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@Component
+@Repository
 public class TeacherRepositoryImpl implements TeacherRepository {
     private final List<Teacher> teacherList = new ArrayList<>();
 

@@ -13,7 +13,9 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+
 public class CourseController implements CourseApi {
+
     private final CourseService courseService;
 
     @Override
@@ -31,7 +33,7 @@ public class CourseController implements CourseApi {
     @Override
     public CourseDTO getCourse(@PathVariable String name) {
         log.info("CourseController was executed with getCourse func. Course name: " + name);
-        return courseService.getCourse(name);
+        return courseService.getCourseByName(name);
     }
 
     @Override
@@ -55,6 +57,6 @@ public class CourseController implements CourseApi {
     @Override
     public List<CourseDTO> getCoursesByTeacher(@PathVariable String email) {
         log.info("CourseController was executed with getCoursesByTeacher func. Teacher email: " + email);
-        return courseService.getCoursesByTeacher(email);
+        return courseService.getCoursesByTeacherEmail(email);
     }
 }

@@ -1,17 +1,19 @@
 package com.epam.spring.project.service.repository.impl;
 
+import com.epam.spring.project.service.exceptions.RowNotFoundException;
 import com.epam.spring.project.service.model.course.Course;
 import com.epam.spring.project.service.model.journal.Journal;
 import com.epam.spring.project.service.model.user.Student;
 import com.epam.spring.project.service.repository.interfaces.JournalRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@Component
+@Repository
 public class JournalRepositoryImpl implements JournalRepository {
     private final List<Journal> journalRowList = new ArrayList<>();
 
@@ -28,7 +30,7 @@ public class JournalRepositoryImpl implements JournalRepository {
                 .stream()
                 .filter(j -> j.getCourse().getName().equals(courseName) && j.getStudent().getEmail().equals(studentEmail))
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Row is not found"))
+                .orElseThrow(() -> new RowNotFoundException("Row is not found"))
                 .setMark(mark);
         return mark;
     }

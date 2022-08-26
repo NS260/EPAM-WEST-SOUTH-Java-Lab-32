@@ -9,7 +9,7 @@ public interface AdminService {
 
     AdminDTO updateAdmin(String email, AdminDTO admin);
 
-    AdminDTO getAdmin(String email);
+    AdminDTO getAdminByEmail(String email);
 
     void deleteAdmin(String email);
 

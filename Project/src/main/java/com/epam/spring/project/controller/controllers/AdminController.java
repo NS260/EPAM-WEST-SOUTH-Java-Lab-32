@@ -12,13 +12,14 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+
 public class AdminController implements AdminApi {
     private final AdminService adminService;
 
     @Override
     public AdminDTO getAdmin(@PathVariable String email) {
         log.info("AdminController was executed with getAdmin func. User email: " + email);
-        return adminService.getAdmin(email);
+        return adminService.getAdminByEmail(email);
     }
 
     @Override

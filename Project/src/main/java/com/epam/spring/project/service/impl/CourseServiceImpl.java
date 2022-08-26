@@ -37,7 +37,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseDTO getCourse(String name) {
+    public CourseDTO getCourseByName(String name) {
         log.info("CourseServiceImpl was executed with getCourse func. Course name: " + name);
         Course course = courseRepository.getCourse(name);
         return CourseMapper.INSTANCE.mapToDto(course);
@@ -67,7 +67,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseDTO> getCoursesByTeacher(String email) {
+    public List<CourseDTO> getCoursesByTeacherEmail(String email) {
         log.info("CourseServiceImpl was executed with getCoursesByTeacher func. Teacher email: " + email);
         return courseRepository
                 .getCoursesByTeacher(email)

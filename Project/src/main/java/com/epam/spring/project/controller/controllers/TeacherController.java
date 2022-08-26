@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class TeacherController implements TeacherApi {
+
     private final TeacherService teacherService;
 
     @Override
@@ -30,7 +31,7 @@ public class TeacherController implements TeacherApi {
     @Override
     public TeacherDTO getTeacher(@PathVariable String email) {
         log.info("TeacherController was executed with getTeacher func. Teacher email: " + email);
-        return teacherService.getTeacher(email);
+        return teacherService.getTeacherByEmail(email);
     }
 
     @Override

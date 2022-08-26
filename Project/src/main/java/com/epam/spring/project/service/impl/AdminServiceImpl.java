@@ -26,7 +26,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public AdminDTO updateAdmin(String email, AdminDTO admin) {
+    public AdminDTO updateAdminByEmail(String email, AdminDTO admin) {
         log.info("AdminServiceImpl was executed with updateAdmin func. Admin email: " + email);
         Admin newAdmin = adminRepository.updateAdmin(email, AdminMapper.INSTANCE.mapToEntity(admin));
         return AdminMapper.INSTANCE.mapToDto(newAdmin);
@@ -39,7 +39,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void deleteAdmin(String email) {
+    public void deleteAdminByEmail(String email) {
         log.info("AdminServiceImpl was executed with deleteAdmin func. Admin email: " + email);
         adminRepository.deleteAdmin(email);
     }

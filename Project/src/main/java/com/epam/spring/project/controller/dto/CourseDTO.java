@@ -4,7 +4,7 @@ import com.epam.spring.project.service.model.course.constant.Direction;
 import com.epam.spring.project.service.model.course.constant.Status;
 import com.epam.spring.project.service.model.user.Teacher;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.*;
+import javax.validation.constraints.*;
 import lombok.Builder;
 import lombok.Data;
 

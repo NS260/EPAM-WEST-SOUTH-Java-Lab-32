@@ -2,10 +2,10 @@ package com.epam.spring.project.controller.dto;
 
 import com.epam.spring.project.controller.validation.ValidPassword;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Data;
 

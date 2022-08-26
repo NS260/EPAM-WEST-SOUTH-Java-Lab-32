@@ -26,7 +26,7 @@ public class StudentController implements StudentApi {
     @Override
     public StudentDTO updateStudent(@PathVariable String email, @RequestBody StudentDTO student) {
         log.info("StudentController was executed with updateStudent func. Student email: " + email);
-        return studentService.updateStudent(email, student);
+        return studentService.updateStudentByEmail(email, student);
     }
 
     @Override
@@ -38,25 +38,25 @@ public class StudentController implements StudentApi {
     @Override
     public void deleteStudent(@PathVariable String email) {
         log.info("StudentController was executed with deleteStudent func. Student email: " + email);
-        studentService.deleteStudent(email);
+        studentService.deleteStudentByEmail(email);
     }
 
     @Override
     public void blockStudent(@PathVariable String blockEmail) {
         log.info("StudentController was executed with blockStudent func. Student email: " + blockEmail);
-        studentService.blockStudent(blockEmail);
+        studentService.blockStudentByEmail(blockEmail);
     }
 
     @Override
     public void unblockStudent(@PathVariable String unblockEmail) {
         log.info("StudentController was executed with unblockStudent func. Student email: " + unblockEmail);
-        studentService.unblockStudent(unblockEmail);
+        studentService.unblockStudentByEmail(unblockEmail);
     }
 
     @Override
     public StudentDTO setStudentOnCourse(@RequestBody CourseDTO course, @PathVariable String registerEmail) {
         log.info("StudentController was executed with setStudentOnCourse func. Student email: " + registerEmail);
-        return studentService.setStudentOnCourse(course, registerEmail);
+        return studentService.setStudentOnCourseByEmail(course, registerEmail);
     }
 
     @Override

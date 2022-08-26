@@ -7,11 +7,11 @@ import java.util.List;
 public interface AdminService {
     AdminDTO createAdmin(AdminDTO admin);
 
-    AdminDTO updateAdmin(String email, AdminDTO admin);
+    AdminDTO updateAdminByEmail(String email, AdminDTO admin);
 
     AdminDTO getAdminByEmail(String email);
 
-    void deleteAdmin(String email);
+    void deleteAdminByEmail(String email);
 
     List<AdminDTO> listAdmins();
 }

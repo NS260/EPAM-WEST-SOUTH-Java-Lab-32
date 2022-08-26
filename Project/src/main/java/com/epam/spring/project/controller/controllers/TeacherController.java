@@ -25,7 +25,7 @@ public class TeacherController implements TeacherApi {
     @Override
     public TeacherDTO updateTeacher(@PathVariable String email, @RequestBody TeacherDTO teacher) {
         log.info("TeacherController was executed with updateTeacher func. Teacher email: " + email);
-        return teacherService.updateTeacher(email, teacher);
+        return teacherService.updateTeacherByEmail(email, teacher);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class TeacherController implements TeacherApi {
     @Override
     public void deleteTeacher(@PathVariable String email) {
         log.info("TeacherController was executed with deleteTeacher func. Teacher email: " + email);
-        teacherService.deleteTeacher(email);
+        teacherService.deleteTeacherByEmail(email);
     }
 
     @Override

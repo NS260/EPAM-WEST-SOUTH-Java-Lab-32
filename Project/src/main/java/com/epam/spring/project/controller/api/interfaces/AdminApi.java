@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Api(tags = "Admin Api")
-@RequestMapping("api/v1/admins")
+@RequestMapping("api/v1/admin")
 public interface AdminApi {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "email", paramType = "path", required = true, value = "Admin email")
     })
-    @ApiOperation(value = "Get admin")
+    @ApiOperation(value = "Get admin by email")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{email}")
     AdminDTO getAdmin(@PathVariable String email);

@@ -7,11 +7,11 @@ import java.util.List;
 public interface TeacherService {
     TeacherDTO createTeacher(TeacherDTO teacher);
 
-    TeacherDTO updateTeacher(String email, TeacherDTO teacher);
+    TeacherDTO updateTeacherByEmail(String email, TeacherDTO teacher);
 
     TeacherDTO getTeacherByEmail(String email);
 
-    void deleteTeacher(String email);
+    void deleteTeacherByEmail(String email);
 
     List<TeacherDTO> listTeachers();
 }

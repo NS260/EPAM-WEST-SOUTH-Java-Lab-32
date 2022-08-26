@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Api(tags = "Student Api")
-@RequestMapping("api/v1/students")
+@RequestMapping("api/v1/student")
 public interface StudentApi {
     @ApiOperation("Create student")
     @ResponseStatus(HttpStatus.CREATED)
@@ -30,7 +30,7 @@ public interface StudentApi {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "email", paramType = "path", required = true, value = "Student email")
     })
-    @ApiOperation("Get student")
+    @ApiOperation("Get student by email")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{email}")
     StudentDTO getStudent(@PathVariable String email);

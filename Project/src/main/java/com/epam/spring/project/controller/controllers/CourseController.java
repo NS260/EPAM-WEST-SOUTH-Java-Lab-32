@@ -27,7 +27,7 @@ public class CourseController implements CourseApi {
     @Override
     public CourseDTO updateCourse(@PathVariable String name, @RequestBody CourseDTO course) {
         log.info("CourseController was executed with updateCourse func. Course name: " + name);
-        return courseService.updateCourse(name, course);
+        return courseService.updateCourseByName(name, course);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class CourseController implements CourseApi {
     @Override
     public void deleteCourse(@PathVariable String name) {
         log.info("CourseController was executed with deleteCourse func. Course name: " + name);
-        courseService.deleteCourse(name);
+        courseService.deleteCourseByName(name);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class CourseController implements CourseApi {
     @Override
     public CourseDTO setTeacherOnCourse(@PathVariable String courseName, @RequestBody TeacherDTO teacher) {
         log.info("CourseController was executed with setTeacherOnCourse func. Course name: " + courseName);
-        return courseService.setTeacherOnCourse(courseName, teacher);
+        return courseService.setTeacherOnCourseByName(courseName, teacher);
     }
 
     @Override

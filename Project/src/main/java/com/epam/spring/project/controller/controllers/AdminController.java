@@ -31,13 +31,13 @@ public class AdminController implements AdminApi {
     @Override
     public AdminDTO updateAdmin(@PathVariable String email, @RequestBody AdminDTO admin) {
         log.info("AdminController was executed with updateAdmin func. User email: " + email);
-        return adminService.updateAdmin(email, admin);
+        return adminService.updateAdminByEmail(email, admin);
     }
 
     @Override
     public void deleteAdmin(@PathVariable String email) {
         log.info("AdminController was executed with deleteAdmin func. User email: " + email);
-        adminService.deleteAdmin(email);
+        adminService.deleteAdminByEmail(email);
     }
 
     @Override

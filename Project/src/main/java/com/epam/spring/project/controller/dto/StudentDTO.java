@@ -3,7 +3,7 @@ package com.epam.spring.project.controller.dto;
 import com.epam.spring.project.controller.validation.ValidPassword;
 import com.epam.spring.project.service.model.user.constant.Block;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.*;
+import javax.validation.constraints.*;
 import lombok.Builder;
 import lombok.Data;
 

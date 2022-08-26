@@ -37,7 +37,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseDTO getCourseByEmail(String name) {
+    public CourseDTO getCourseByName(String name) {
         log.info("CourseServiceImpl was executed with getCourse func. Course name: " + name);
         Course course = courseRepository.getCourse(name);
         return CourseMapper.INSTANCE.mapToDto(course);

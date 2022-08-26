@@ -10,7 +10,7 @@ public interface CourseService {
 
     CourseDTO updateCourse(String email, CourseDTO course);
 
-    CourseDTO getCourseByEmail(String name);
+    CourseDTO getCourseByName(String name);
 
     void deleteCourse(String name);
 

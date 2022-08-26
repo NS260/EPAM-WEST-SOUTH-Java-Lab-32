@@ -35,7 +35,7 @@ public class CourseController {
     @GetMapping("/{name}")
     public CourseDTO getCourse(@PathVariable String name) {
         log.info("CourseController was executed with getCourse func. Course name: " + name);
-        return courseService.getCourseByEmail(name);
+        return courseService.getCourseByName(name);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)

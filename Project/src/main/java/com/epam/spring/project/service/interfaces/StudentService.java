@@ -8,17 +8,17 @@ import java.util.List;
 public interface StudentService {
     StudentDTO createStudent(StudentDTO student);
 
-    StudentDTO updateStudent(String email, StudentDTO student);
+    StudentDTO updateStudentByEmail(String email, StudentDTO student);
 
     StudentDTO getStudentByEmail(String email);
 
-    void deleteStudent(String email);
+    void deleteStudentByEmail(String email);
 
     List<StudentDTO> listStudents();
 
-    void blockStudent(String email);
+    void blockStudentByEmail(String email);
 
-    void unblockStudent(String email);
+    void unblockStudentByEmail(String email);
 
-    StudentDTO setStudentOnCourse(CourseDTO course, String email);
+    StudentDTO setStudentOnCourseByEmail(CourseDTO course, String email);
 }

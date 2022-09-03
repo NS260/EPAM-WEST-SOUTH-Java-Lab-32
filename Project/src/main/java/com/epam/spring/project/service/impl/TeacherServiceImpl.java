@@ -26,7 +26,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public TeacherDTO updateTeacher(String email, TeacherDTO teacher) {
+    public TeacherDTO updateTeacherByEmail(String email, TeacherDTO teacher) {
         log.info("TeacherServiceImpl was executed with updateTeacher func. Teacher email: " + email);
         Teacher newTeacher = TeacherMapper.INSTANCE.mapToEntity(teacher);
         newTeacher = teacherRepository.updateTeacher(email, newTeacher);
@@ -41,7 +41,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public void deleteTeacher(String email) {
+    public void deleteTeacherByEmail(String email) {
         log.info("TeacherServiceImpl was executed with deleteTeacher func. Teacher email: " + email);
         teacherRepository.deleteTeacher(email);
     }

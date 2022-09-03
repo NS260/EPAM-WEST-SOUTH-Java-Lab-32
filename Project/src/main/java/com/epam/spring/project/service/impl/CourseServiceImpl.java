@@ -29,7 +29,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseDTO updateCourse(String name, CourseDTO course) {
+    public CourseDTO updateCourseByName(String name, CourseDTO course) {
         log.info("CourseServiceImpl was executed with createCourse func. Course name: " + name);
         Course newCourse = CourseMapper.INSTANCE.mapToEntity(course);
         newCourse = courseRepository.updateCourse(name, newCourse);
@@ -44,7 +44,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public void deleteCourse(String name) {
+    public void deleteCourseByName(String name) {
         log.info("CourseServiceImpl was executed with deleteCourse func. Course name: " + name);
         courseRepository.deleteCourse(name);
     }
@@ -60,7 +60,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseDTO setTeacherOnCourse(String courseName, TeacherDTO teacher) {
+    public CourseDTO setTeacherOnCourseByName(String courseName, TeacherDTO teacher) {
         log.info("CourseServiceImpl was executed with registerTeacherOnCourse func. Course name: " + courseName);
         Course course = courseRepository.setTeacherOnCourse(courseName, TeacherMapper.INSTANCE.mapToEntity(teacher));
         return CourseMapper.INSTANCE.mapToDto(course);

@@ -29,7 +29,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public StudentDTO updateStudent(String email, StudentDTO student) {
+    public StudentDTO updateStudentByEmail(String email, StudentDTO student) {
         log.info("StudentServiceImpl was executed with updateStudent func. Student email: " + email);
         Student newStudent = StudentMapper.INSTANCE.mapToEntity(student);
         newStudent = studentRepository.updateStudent(email, newStudent);
@@ -44,7 +44,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void deleteStudent(String email) {
+    public void deleteStudentByEmail(String email) {
         log.info("StudentServiceImpl was executed with deleteStudent func. Student email: " + email);
         studentRepository.deleteStudent(email);
     }
@@ -60,19 +60,19 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void blockStudent(String email) {
+    public void blockStudentByEmail(String email) {
         log.info("StudentServiceImpl was executed with blockStudent func. Student email: " + email);
         studentRepository.blockStudent(email);
     }
 
     @Override
-    public void unblockStudent(String email) {
+    public void unblockStudentByEmail(String email) {
         log.info("StudentServiceImpl was executed with unblockStudent func. Student email: " + email);
         studentRepository.unblockStudent(email);
     }
 
     @Override
-    public StudentDTO setStudentOnCourse(CourseDTO course, String email) {
+    public StudentDTO setStudentOnCourseByEmail(CourseDTO course, String email) {
         log.info("StudentServiceImpl was executed with registerStudentOnCourse func. Student email: " + email);
         studentRepository.setStudentOnCourse(CourseMapper.INSTANCE.mapToEntity(course), email);
         Student student = studentRepository.getStudent(email);
